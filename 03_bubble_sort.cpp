@@ -27,14 +27,9 @@ void bubble_sort(int* A, int n){
     /* Recorrido Principal */
     //Se recorre el arreglo de izquierda a derecha desde la
     //primera posición y hasta la penúltima
-    for(int j = 0; j < n-1; ++j)
-        /* Recorrido Secundario */
-        //Se recorre el arreglo desde la primera posición y
-        //hasta la posición previa a las celdas ya ordenadas
-        for(int i = 0; i < n-j; ++i)
-            //Para la pareja actual, si el dato más grande de
-            //los dos está a la izquierda, se hace un swap
-            if(A[i] > A[i+1]){
+    for(int j = 0; j < n; ++j)
+        for(int i = 0; i < n-j-1; ++i)
+            if(A[i] < A[i+1]){
                 int temp = A[i];
                 A[i] = A[i+1];
                 A[i+1] = temp;
